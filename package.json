@@ -1,0 +1,33 @@
+{
+  "name": "characters",
+  "version": "1.0.0",
+  "description": "",
+  "main_commented_out": "index.js",
+  "scripts": {
+    "compile": "babel src/ -D lib/",
+    "flow": "flow",
+    "server": "node_modules/babel-cli/bin/babel-node.js server.js",
+    "webpack": "webpack --watch",
+    "repl": "babel-node",
+    "test": "babel-node test/testReducer.js"
+  },
+  "author": "Jacob Prinz <jacobeliasprinz@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-flow": "^7.7.4",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.112.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12",
+    "onlyjs": "0.0.3",
+    "x-reactor": "0.0.6"
+  }
+}

@@ -1,0 +1,13 @@
+[ignore]
+./src/display/*
+
+[include]
+
+[libs]
+./libDefs/
+
+[lints]
+
+[options]
+
+[strict]

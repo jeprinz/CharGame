@@ -1,0 +1,49 @@
+This file is a note to myself in the future for what development tools I am using and how to set them up.
+Anyone else who wants to develop the package must clone the git repo and then do things marked with "---"
+
+Npm.
+
+This is an npm project. The configuration for this is in package.json. This includes two sets of libraries that
+the projects depends on: devDependencies and dependencies.
+devDependencies are necessary only for development and don't exist in the finished webpage. These include
+tools like flow which make it easier to write code, and tools like webpack which packages the code into
+a finished website.
+
+--- run "npm install" to install all dependencies
+
+Npm makes it easy to install libraries. To install a library with a given name, just run either
+"npm install <name> --save" or "npm install <name> --save-dev" depending on if it is runtime or
+development. The "--save*" options make npm write the dependency to package.json, so anyone else
+who downloads the code can get them all just by running "npm install"
+
+Flow.
+
+Flow is a tool which adds typing to Javascript.
+I followed the instruction at
+https://flow.org/en/docs/install/
+To install flow.
+
+Atom.  --- install atom.
+One could use any editor or IDE for this project. I use atom.
+
+--- install flow-ide package for atom.
+The flow package needs to know where the flow executable is.
+executable is. One could change settings so that it uses the local version of flow in the project, but
+it is much easier to run the following line:
+--- npm install --global flow-bin
+(Probably need to use sudo)
+
+Babel
+
+The code is not quite javascript. It has type annotations from flow, and has advanced features like "() =>" lambda expressions.
+This needs to be converted into regular javascript in order for it to be run in a browser. Babel is a package which can
+convert the fancy javascript into regular javascript. There are also several babel-preset packages installed which tell
+babel what to do specifically for flow and other things.
+
+Webpack
+
+This is a package which takes all of the code and packages it into a file that can be loaded in the browser, using babel.
+--- Every time you want to develop code, you need to run "npm run webpack". This will watch for every time you change a file and
+then update the resulting code.
+
+Configuration for webpack is in webpack.config.js

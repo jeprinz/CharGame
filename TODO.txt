@@ -1,0 +1,13 @@
+- Add XConst to XReactor, which is same as XVar but without set method
+- Add simple types to only, so only.html : any -> HtmlElement
+- make HTMLUtil xHtml : XConst<HTMLElement> -> HTMLElement which automatically updates
+
+IDEA:
+Design principle with x-reactor is that XVars should never be returned from a function, rather XConst
+For example, I could make a checkbox input
+makeCheckBox : [HtmlElement, XConst<boolean>]
+internally, the function uses an XVar which the XConst depends on. However,
+this should not be accessible from outside
+
+IDEA:
+The user interface should be able to be defined in a completely separate place from 
